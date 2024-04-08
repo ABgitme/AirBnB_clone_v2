@@ -3,9 +3,8 @@
 import os.path
 from fabric.api import env, put, run
 
-
 env.hosts = ["54.175.120.195", "54.226.17.144"]
-env.user = 'ubuntu'
+
 
 def do_deploy(archive_path):
     """Distributes an archive to a web server.
@@ -34,4 +33,5 @@ def do_deploy(archive_path):
             format(name))
         return True
     except Exception as e:
+        print(e)
         return False
