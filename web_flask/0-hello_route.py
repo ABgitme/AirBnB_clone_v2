@@ -4,7 +4,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-
+# defines the application routes
 @app.route('/', strict_slashes=False)
 def hello():
     """
@@ -17,5 +17,6 @@ def hello():
 
 
 if __name__ == '__main__':
-    #starts flack server and listen on network 0.0.0.0:5000
+    # starts flack server
+    # listen on network 0.0.0.0:5000
     app.run(host='0.0.0.0', port=5000)
