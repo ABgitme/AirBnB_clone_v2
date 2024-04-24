@@ -7,6 +7,7 @@ from flask import Flask, escape
 
 app = Flask(__name__)
 
+
 # defines the application routes /
 @app.route('/', strict_slashes=False)
 def hello():
@@ -18,6 +19,7 @@ def hello():
     """
     return "Hello HBNB!"
 
+
 # defines the application routes for /hbnb
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
@@ -28,6 +30,7 @@ def hbnb():
         str: A message.
     """
     return 'HBNB'
+
 
 # defines the application routes for /c/<text>
 @app.route('/c/<text>', strict_slashes=False)
