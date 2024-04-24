@@ -96,7 +96,7 @@ def number_template(n):
     Returns:
         str: A HTML page with "Number: n" inside the <h1> tag.
     """
-    return render_template('5-number.htm', n=n)
+    return render_template('5-number.html', n=n)
 
 
 if __name__ == '__main__':
