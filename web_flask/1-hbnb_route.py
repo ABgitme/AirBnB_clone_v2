@@ -19,6 +19,7 @@ def hello():
     """
     return "Hello HBNB!"
 
+
 # defines the application routes
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
