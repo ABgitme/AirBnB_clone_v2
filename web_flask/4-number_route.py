@@ -68,6 +68,7 @@ def python_text(text="is_cool"):
     """
     return f'Python {text.replace("_", " ")}'
 
+
 # defines the application routes for /number/<int>
 @app.route('/number/<int:n>', strict_slashes=False)
 def number(n):
