@@ -16,7 +16,8 @@ class FileStorage:
         if isinstance(cls, str):
             cls = globals().get(cls)
         if cls and issubclass(cls, BaseModel):
-            return {k: v for k, v in self.__objects.items() if isinstance(v, cls)}
+            return {k: v for k, v in
+                    self.__objects.items() if isinstance(v, cls)}
         return {}
 
     def new(self, obj):
@@ -52,7 +53,7 @@ class FileStorage:
             with open(FileStorage.__file_path, 'r') as f:
                 temp = json.load(f)
                 for key, val in temp.items():
-                        self.all()[key] = classes[val['__class__']](**val)
+                    self.all()[key] = classes[val['__class__']](**val)
         except FileNotFoundError:
             pass
         except json.decoder.JSONDecodeError:
@@ -63,7 +64,8 @@ class FileStorage:
         if obj is None:
             return
 
-        keys_to_delete = [key for key, value in self.__objects.items() if value is obj]
+        keys_to_delete = [key for key, value in
+                          self.__objects.items() if value is obj]
         for key in keys_to_delete:
             try:
                 del self.__objects[key]
