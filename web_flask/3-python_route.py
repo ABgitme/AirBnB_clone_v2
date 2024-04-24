@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-    starts a Flask web application with the specified parameters
+    starts a Flask web application
+    with the specified parameters
 """
 
 from flask import Flask, escape
@@ -48,6 +49,7 @@ def c_text(text):
     return f'C {escape(text.replace("_", " "))}'
 
 
+# defines the application routes for /python/<text>
 @app.route('/python/', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def python_text(text="is_cool"):
