@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """
-    starts a Flask web application
-    with the specified parameters
-"""
+This module defines a Flask web application with several routes
+handling different URL patterns.
 
+The application listens on network interface 0.0.0.0
+and port 5000 by default.
+"""
 from flask import Flask, escape
 
 app = Flask(__name__)
