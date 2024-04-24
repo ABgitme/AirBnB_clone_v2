@@ -6,7 +6,7 @@ handling different URL patterns.
 The application listens on network interface 0.0.0.0
 and port 5000 by default.
 """
-from flask import Flask, escape
+from flask import Flask
 
 app = Flask(__name__)
 
@@ -48,7 +48,7 @@ def c_text(text):
         str: A message displaying 'C '
         followed by the value of the text variable.
     """
-    return f'C {escape(text.replace("_", " "))}'
+    return f'C {text.replace("_", " ")}'
 
 
 # defines the application routes for /python/<text>
@@ -66,7 +66,7 @@ def python_text(text="is_cool"):
         str: A message displaying 'Python '
         followed by the value of the text variable.
     """
-    return f'Python {escape(text.replace("_", " "))}'
+    return f'Python {text.replace("_", " ")}'
 
 
 if __name__ == '__main__':
